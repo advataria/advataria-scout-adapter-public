@@ -1,0 +1,28 @@
+{
+  "job_id": "demo-1764874965880",
+  "status": "success",
+  "client": {
+    "url": "https://fetch.ai",
+    "title": "Fetch.ai - Build. Discover. Transact.",
+    "meta": "Platform to enable the agentic economy.",
+    "headings": "The Complete Ecosystem for the Agentic World | ASI:One | Agentverse | Flockx | AI Agents Are Everywhere, They Need a Network. | 2M+ | The Agentic World in Action | The Morning Orchestration | The Friday Night Coordination | Group Planning Made Easy",
+    "top_text": "Where your AI journey becomes a business revolution Begin with AI that listens, remembers, and takes action across your world. Discover and connect with millions of agents through powerful analytics tools. Transform your business with AI agents that automate and scale your work. We built the rails for the agentic economy. A thriving network of autonomous agents already live, growing daily, ready to connect. Everything from personal AI to business tools, all built to work seamlessly together Experience AI built for real action, not just chat, agents that can get things done."
+  },
+  "competitors": [],
+  "uploaded_docs": [],
+  "client_inputs": {
+    "goals": [],
+    "kpi": [],
+    "brand_tone": "",
+    "notes": "",
+    "campaign_goal_text": "",
+    "campaign_message_hint": "",
+    "campaign_audience_hint": "",
+    "campaign_kpi": []
+  },
+  "meta": {
+    "scraped_at": "2025-12-04T19:02:48.019188Z",
+    "agent": "AdvaScout AI Agent",
+    "agent_version": "0.8.0"
+  }
+}

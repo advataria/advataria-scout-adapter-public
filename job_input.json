@@ -1,0 +1,26 @@
+{
+  "job_id": "demo-pekneprezky-001",
+  "client_url": "https://pekneprezky.sk",
+  "competitor_urls": [
+    "https://nejaky-konkurent1.sk",
+    "https://nejaky-konkurent2.sk"
+  ],
+  "uploaded_docs": [
+    {
+      "doc_id": "doc-001",
+      "filename": "brand_book.pdf",
+      "mime_type": "application/pdf"
+    }
+  ],
+  "client_form": {
+    "goals": ["increase bookings"],
+    "kpi": ["bookings"],
+    "brand_tone": "friendly expert",
+    "notes": "Preferujeme kozmonauta avatara",
+
+    "campaign_goal_text": "Zvýšiť počet online predajov o 20 % počas najbližších 3 mesiacov.",
+    "campaign_message_hint": "",
+    "campaign_audience_hint": "podnikatelia",
+    "campaign_kpi": ["predaje", "CTR", "conversion_rate"]
+  }
+}
