@@ -1,10 +1,11 @@
 # AdvaScout uAgent (Advataria Scout Adapter – Public MVP)
 
-AdvaScout is a Fetch.ai uAgent that transforms a website URL into a structured Content Pack JSON
-for marketing analysis and autonomous creative pipelines.
+AdvaScout is a Fetch.ai uAgent that transforms a website URL into a structured
+Content Pack JSON for marketing analysis and autonomous creative pipelines.
 
-This repository contains a minimal open-source adapter extracted from the Advataria project and
-released under the MIT License as a reusable building block for the Fetch agent ecosystem.
+This repository contains a minimal open-source adapter extracted from the
+Advataria project and released under the MIT License as a reusable building
+block for the Fetch agent ecosystem.
 
 ---------------------------------------------------------------------
 
@@ -27,7 +28,7 @@ INPUT MESSAGE (ScoutRequest)
   "url": "https://example.com"
 }
 
-THE AGENT PERFORMS:
+THE AGENT PERFORMS
 
 1. Fetches the HTML of the provided URL.
 2. Extracts marketing-relevant signals:
@@ -64,6 +65,31 @@ THE AGENT PERFORMS:
 
 ---------------------------------------------------------------------
 
+ARCHITECTURE OVERVIEW
+
+High-level message flow between the demo client and the uAgent:
+
+---------------------------------------------------------------
+Client (02_scout_client_test.py)  ---- ScoutRequest ---->  Server (01_adva_uagent_scout.py)
+Client (02_scout_client_test.py)  <--- ScoutResponse <---  Server (01_adva_uagent_scout.py)
+---------------------------------------------------------------
+
+COMPONENTS
+
+01_adva_uagent_scout.py
+- Listens for incoming ScoutRequest
+- Calls run_scout(job)
+- Extracts webpage content
+- Sends ScoutResponse
+- Compatible with Fetch Agentverse Mailbox
+
+02_scout_client_test.py
+- Simple demo client
+- Sends a ScoutRequest to the running uAgent
+- Prints the returned ScoutResponse
+
+---------------------------------------------------------------------
+
 LIVE INSPECTION (AGENTVERSE INSPECTOR)
 
 When running, both the server and client print an Inspector link in logs.
@@ -72,8 +98,8 @@ Using Agentverse Inspector you can:
 - Inspect the received ScoutRequest message and its JSON payload
 - Inspect the sent ScoutResponse message and its JSON payload
 
-These JSON payloads are machine-readable contracts intended for reuse by downstream agents
-(Scout → Brief → Story → …).
+These JSON payloads are machine-readable contracts intended for reuse by
+downstream agents (Scout → Brief → Story → …).
 
 ---------------------------------------------------------------------
 
@@ -81,43 +107,22 @@ MESSAGE SCHEMAS (PYDANTIC)
 
 Defined in adva_scout_models.py and reused on both server and client.
 
-ScoutRequest:
+ScoutRequest
 - url: str (min_length=4)
 
-ScoutResponseClient:
+ScoutResponseClient
 - url: str
 - title: str
 - meta: str
 - headings: str
 - top_text: str
 
-ScoutResponse:
+ScoutResponse
 - job_id: str
 - client: ScoutResponseClient
 - scraped_at: str
 - status: str
-- error: Optional[str] = None
-
----------------------------------------------------------------------
-
-ARCHITECTURE OVERVIEW
-
-adva_scout_test_client  ---- ScoutRequest ---->  adva_scout_uagent
-       ^                                            |
-       |                                            |
-       --------------- ScoutResponse ---------------
-
-adva_scout_uagent.py
-- Listens for ScoutRequest
-- Calls run_scout(job)
-- Extracts webpage content
-- Sends ScoutResponse
-- Compatible with Agentverse Mailbox
-
-02_scout_client_test.py
-- Demo client
-- Sends ScoutRequest
-- Prints ScoutResponse
+- error: Optional[str]
 
 ---------------------------------------------------------------------
 
@@ -129,8 +134,10 @@ adva_scout_uagent.py      – Fetch.ai uAgent wrapper
 p01_data_acquisition.py   – HTML fetch + BeautifulSoup extraction
 02_scout_client_test.py   – optional test client
 job_input.json            – example job payload
-demo_*.adva_scout.json    – example Content Pack output
+scout_request.json        – ScoutRequest contract example
+scout_response.json       – ScoutResponse contract example
 requirements.txt
+DISCLAIMER.md
 LICENSE
 README.md
 
@@ -138,13 +145,13 @@ README.md
 
 RUNNING LOCALLY
 
-1) Install dependencies:
+1) Install dependencies
 
 pip install -r requirements.txt
 
-2) Run the AdvaScout uAgent (server):
+2) Run the AdvaScout uAgent (server)
 
-python adva_scout_uagent.py
+python 01_adva_uagent_scout.py
 
 The agent will:
 - start on http://127.0.0.1:8010/submit
@@ -152,7 +159,7 @@ The agent will:
 - connect to Agentverse Mailbox (if configured)
 - print Inspector links in logs
 
-3) Run the test client:
+3) Run the test client
 
 python 02_scout_client_test.py
 
@@ -182,9 +189,9 @@ EXAMPLE OUTPUT (SCOUTRESPONSE)
 
 ENVIRONMENT VARIABLES (OPTIONAL)
 
-export ADVA_SCOUT_AGENT_SEED="demo-seed-not-for-production-12345"
-export ADVA_SCOUT_AGENT_PORT=8010
-export ADVA_SCOUT_AGENT_ENDPOINT="http://127.0.0.1:8010/submit"
+ADVA_SCOUT_AGENT_SEED="demo-seed-not-for-production-12345"
+ADVA_SCOUT_AGENT_PORT=8010
+ADVA_SCOUT_AGENT_ENDPOINT="http://127.0.0.1:8010/submit"
 
 If not provided, the agent falls back to safe defaults.
 
