@@ -1,0 +1,19 @@
+{
+  "job_id": "scout-1765549018",
+  "status": "success",
+  "client": {
+    "url": "https://fetch.ai",
+    "title": "Fetch.ai - Search and Discover.",
+    "meta": "The Complete Ecosystem for the Agentic Economy.",
+    "headings": "Your personal AI | See Fetch AI in Action | Input your request | Connect with agents | Get your results | From Shopping To Scheduling. | Plan a family trip | Schedule meetings | Book flights | Plan a birthday",
+    "top_text": "Flights Booked. Dinner Reserved. Calendar Managed. Done your way, with your personal AI agent. One request. Millions of agents ready to act. Tell Fetch what you need — a trip, a reservation, or a complex plan in natural language. Fetch instantly brings in trusted brand agents who can handle each part of the task. You can see who's working and what they're doing. Review everything in one place: agent responses, confirmations, and follow-ups. Approve or adjust, and Fetch keeps your progress organized. Just tell Fetch what you need and skip the hassle Plan a 4 day trip to Seattle with two kids. Prioritize walkable hotels and kid-friendly food. Find a time and place to meet a friend of mine for lunch next week."
+  },
+  "competitors": [],
+  "uploaded_docs": [],
+  "client_inputs": {},
+  "meta": {
+    "scraped_at": "2025-12-12T14:16:59.418682Z",
+    "agent": "AdvaScout AI Agent",
+    "agent_version": "0.8.0"
+  }
+}
